@@ -1,7 +1,8 @@
 New frontend for S2G
 
 Structure
-``` .
+```
+.
 └── S2Gfrontend/
     ├── design/
     │   └── visual sketches for the UI
