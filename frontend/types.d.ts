@@ -1,0 +1,3 @@
+type ThemeState = {
+    theme: number
+}
