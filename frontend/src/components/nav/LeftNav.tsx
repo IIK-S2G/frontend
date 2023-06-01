@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function LeftNav() {
+const LeftNav = (): JSX.Element => {
     return(
         <div className="flex">
             <h2 className="text-gray-500 mx-4"><Link href="https://s2gctf.ncr.ntnu.no/play/resources">Resources</Link></h2>
@@ -10,3 +10,5 @@ export default function LeftNav() {
         </div>
     )
 }
+
+export default LeftNav
