@@ -5,8 +5,8 @@ import ThemeSwitch from "../themeSwitch";
 
 const Navbar = (): JSX.Element => {
     return(
-        <nav className="bg-black p-4 flex justify-between h-[8vh] flex-col md:flex-row sticky top-0 h-50">
-            <h1 className="text-3xl font-bold text-white grid place-content-center mb-2 md:mb-0 mt-[-5px]">
+        <nav className="bg-black flex justify-center h-[8vh] sticky top-0">
+            <h1 className="text-3xl font-bold text-white grid place-content-center mr-12">
                 <Link href="/">S2G</Link>
             </h1>
             <LeftNav/>

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const RightNav = (): JSX.Element => {
     return(
-        <div className="flex">
+        <div className="flex items-center ml-96">
             <div className="inline-block flex mx-4">
                 <h2 className="text-gray-500">
                     <Link className="flex" href="https://s2gctf.ncr.ntnu.no/play/admin/statistics">
