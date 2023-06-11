@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-interface LangState {
+type LangState = {
     lang: number
 }
 
@@ -8,7 +8,7 @@ const initialState: LangState = {
     lang: 0
 }
 
-export const langSlice = createSlice({
+export const LangSlice = createSlice({
     name: 'lang',
     initialState,
     reducers: {
@@ -18,6 +18,6 @@ export const langSlice = createSlice({
     }
 })
 
-export const { changeLang, resetLang, setLang } = langSlice.actions
+export const { changeLang, resetLang, setLang } = LangSlice.actions
 
-export default langSlice.reducer
+export default LangSlice.reducer

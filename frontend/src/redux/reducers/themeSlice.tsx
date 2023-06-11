@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../store"
 
-interface ThemeState {
+type ThemeState = {
     theme: number
 }
 
@@ -9,7 +9,7 @@ const initialState: ThemeState = {
     theme: 0
 }
 
-export const themeSlice = createSlice({
+export const ThemeSlice = createSlice({
     name: 'theme',
     initialState,
     reducers: {
@@ -19,8 +19,6 @@ export const themeSlice = createSlice({
     }
 })
 
-export const { changeTheme, resetTheme, setTheme } = themeSlice.actions
+export const { changeTheme, resetTheme, setTheme } = ThemeSlice.actions
 
-export const selectTheme = (state: RootState) => state.theme.theme
-
-export default themeSlice.reducer
+export default ThemeSlice.reducer

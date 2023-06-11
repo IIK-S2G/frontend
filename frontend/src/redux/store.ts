@@ -1,13 +1,16 @@
-import { configureStore } from "@reduxjs/toolkit"   // Configures the Redux store
-import themeReducer from './reducers/themeSlice'    // Client theme
-import langReducer from './reducers/langSlice'      // Client language
-import thunk from "redux-thunk"                     // todo Middleware interacting with cookies
+import { configureStore } from "@reduxjs/toolkit";
+import langReducer from "./reducers/langSlice";
+import themeReducer from "./reducers/themeSlice";
+import { setupListeners } from "@reduxjs/toolkit/dist/query";
 
 export const store = configureStore({
-    reducer: {
-        theme: themeReducer
-    }
-})
+  reducer: {
+    langReducer,
+    themeReducer,
+  }
+});
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+setupListeners(store.dispatch);
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

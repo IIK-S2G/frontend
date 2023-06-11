@@ -1,3 +1,5 @@
+'use client'
+
 import Line from '../components/line'
 import Quote from '../components/quote/quote'
 
