@@ -1,14 +1,16 @@
 import en from "./text/en.json"
+import { useEffect, useState } from "react"
+import Challenges from "./components/challenges"
 
-const Challenges = (): JSX.Element => {
+const ChallengePage = async() => {
 
     return(
         <main className="grid place-items-center h-[92vh]">
             <div>
-                <h1 className="grid place-items-center text-4xl font-bold mb-4">{en.challenges}</h1>
+                <Challenges/>
             </div>
         </main>
     )
 }
 
-export default Challenges
+export default ChallengePage
