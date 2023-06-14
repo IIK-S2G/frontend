@@ -1,15 +1,14 @@
 import en from "./text/en.json"
-import Challenges from "./components/challenges"
 
-const ChallengePage = async() => {
+const Scoreboard = (): JSX.Element => {
 
     return(
         <main className="grid place-items-center h-[92vh]">
             <div>
-                <Challenges/>
+                <h1 className="grid place-items-center text-4xl font-bold mb-4">{en.scoreboard}</h1>
             </div>
         </main>
     )
 }
 
-export default ChallengePage
+export default Scoreboard

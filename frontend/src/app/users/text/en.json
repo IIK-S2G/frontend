@@ -1,3 +1,8 @@
 {
-    "users": "Users"
+    "users": "Users",
+    "empty": "Found no users",
+    "name": "Name",
+    "website": "Website",
+    "affiliation": "Affiliation",
+    "country": "Country"
 }

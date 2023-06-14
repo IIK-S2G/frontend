@@ -13,12 +13,12 @@ module.exports = {
         'lg': '1024px',
         'xl': '1280px',
         '2xl': '1536px',
-        '1col': '480px',
-        '2col': '740px',
-        '3col': '1160px',
-        '4col': '1460px',
-        '5col': '1860px',
-        '6col': '2200px',
+        '480px': '480px',
+        '740px': '740px',
+        '1160px': '1160px',
+        '1460px': '1460px',
+        '1860px': '1860px',
+        '2200px': '2200px',
     },
     extend: {
       backgroundImage: {

@@ -6,7 +6,7 @@ import gfm from 'remark-gfm';
 
 const Resources = (): JSX.Element => {
     return (
-        <main className="grid place-items-center h-[92vh]">
+        <main className="grid place-items-center h-[92vh] w-full">
             <div className='flex mx-8'>
                 <div className='bg-[#191919] mr-4 p-10 h-[92vh] w-1/2 overflow-auto rounded-xl'>
                     <h1 className='text-4xl font-bold'>{en.title}</h1>

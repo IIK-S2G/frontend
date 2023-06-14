@@ -15,7 +15,7 @@ const RightNav = (): JSX.Element => {
 
             <div className="inline-block flex mx-4">
                 <h2 className="text-gray-500">
-                    <Link className="flex" href="https://s2gctf.ncr.ntnu.no/play/notifications">
+                    <Link className="flex" href="/notifications">
                     <Image className="mt-[-2.5px]" width={30} height={30} src="/images/icons/bell-white.png" alt="Bell" />
                         Notifications
                     </Link>
@@ -24,7 +24,7 @@ const RightNav = (): JSX.Element => {
 
             <div className="inline-block flex mx-4">    
                 <h2 className="text-gray-500">
-                    <Link className="flex" href="https://s2gctf.ncr.ntnu.no/play/user">
+                    <Link className="flex" href="/profile">
                     <Image className="mt-[-2.5px]" width={30} height={30} src="/images/icons/profile-white.png" alt="Profile" />
                         Profile
                     </Link>
@@ -33,7 +33,7 @@ const RightNav = (): JSX.Element => {
 
             <div className="inline-block flex mx-4">
                 <h2 className="text-gray-500">
-                    <Link className="flex" href="https://s2gctf.ncr.ntnu.no/play/settings">
+                    <Link className="flex" href="/settings">
                     <Image className="mt-[-2.5px]" width={30} height={30} src="/images/icons/settings-white.png" alt="Settings" />
                         Settings
                     </Link>

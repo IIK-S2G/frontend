@@ -1,14 +1,16 @@
-import en from "./text/en.json"
+import UserHeader from "./components/header"
+import Users from "./components/users"
 
-const Users = (): JSX.Element => {
+const UsersPage = (): JSX.Element => {
 
     return(
-        <main className="grid place-items-center h-[92vh]">
-            <div>
-                <h1 className="grid place-items-center text-4xl font-bold mb-4">{en.users}</h1>
+        <main className="grid place-items-center h-[92vh] mx-8">
+            <div className="w-full">
+                <UserHeader/>
+                <Users/>
             </div>
         </main>
     )
 }
 
-export default Users
+export default UsersPage

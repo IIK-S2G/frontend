@@ -1,8 +1,8 @@
 type LineProps = {
     color?: string,
     className?: string,
-    height: number,
-    width: number
+    height?: number,
+    width?: number
 }
 
 const Line = ({color, className, height, width}: LineProps): JSX.Element => {

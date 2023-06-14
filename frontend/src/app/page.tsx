@@ -9,7 +9,7 @@ const Home = (): JSX.Element => {
             <h1 className='text-2xl place-items-center font-bold'>{en.rulesTitle}</h1>
             <div className='grid place-items-center mt-5'>
                 {en.rules.map((rule) => (
-                 <div className='flex justify-center w-2/5'>
+                 <div className='flex justify-center w-2/5' key={rule.id}>
                     <p className='w-[30px]' key={rule.id}>{rule.id+1 + ". "}</p>
                     <p className='w-full' key={rule.id}>{rule.rule}</p>
                  </div>   
@@ -22,7 +22,7 @@ const Home = (): JSX.Element => {
                     <h3>{en.helpGjovik.title}</h3>
                 </div>
                 {en.helpGjovik.people.map((people) => (
-                 <div className='flex justify-between w-full'>
+                 <div key={people.name} className='flex justify-between w-full'>
                     <p key={people.name}>{people.name}</p>
                     <p className='text-blue-500' key={people.mail}><Link key={people.name} href={`mailto:${people.mail}`}>{people.mail}</Link></p>
                  </div>
@@ -31,7 +31,7 @@ const Home = (): JSX.Element => {
                     <h3>{en.helpTrondheim.title}</h3>
                 </div>
                 {en.helpTrondheim.people.map((people) => (
-                 <div className='flex justify-between w-full'>
+                 <div key={people.name} className='flex justify-between w-full'>
                     <p key={people.name}>{people.name}</p>
                     <p className='text-blue-500' key={people.mail}><Link key={people.name} href={`mailto:${people.mail}`}>{people.mail}</Link></p>
                  </div>
