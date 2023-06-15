@@ -94,3 +94,28 @@ type SolvedChallengeProps = {
     value: number
     category: string
 }
+
+type AwardProps = {
+    description: string
+    user_id: number
+    user: number
+    name: string
+    date: string
+    icon: string | null
+    team_id: number | null
+    category: string
+    id: number
+    team: number | null
+    value: number
+    requirements: string | null
+}
+
+type HintProps = {
+    challenge_id: number
+    type: string
+    id: number
+    challenge: number
+    requirements: string | null
+    cost: number 
+    content: string
+}
