@@ -18,31 +18,31 @@ const Challenge = ({challenge, solves}: {challenge: ChallengeProps | FullChallen
                     <h1 className='font-semibold'>{challenge.value}</h1>
                 </div>
             </main>
-            {/* {click && <ChallengeInfo challenge={challenge} solves={solves} handler={handleClick}/>} */}
+            {click && <ChallengeInfo challenge={challenge} solves={solves} handler={handleClick}/>}
         </>
     )
 }
 
-const ChallengeInfo = async({challenge, solves, handler}: {challenge: ChallengeProps | FullChallengeProps, solves: SolverProps[] | null, handler: () => void}) => {
+const ChallengeInfo = ({challenge, solves, handler}: {challenge: ChallengeProps | FullChallengeProps, solves: SolverProps[] | null, handler: () => void}) => {
     const [solvePage, showSolvePage] = useState(false)
 
     const Info = () => {
         // make this dynamic by fetch less under larger loads to reduce stress
-        if (!('description' in challenge)) return (
+        if (!('description' in challenge && 'decay' in challenge)) return (
             <div className="fixed top-0 left-0 w-full h-full grid place-items-center">
-                <div className="h-[200px] w-[200px] bg-red-400">
-                    <h1 className='text-lg font-semibold'>{challenge.name}</h1>
-                    <h1 className='font-semibold'>{challenge.value}</h1>
-                    <h1 className='font-semibold'>{challenge.tags[0].value}</h1>
-                    <h1 className='font-semibold'>Failed to load info. Retrying in 1 minute.</h1>
+                <div className="h-[200px] w-[200px]">
+                    <h1 className='bg-blue-200 text-center text-lg font-semibold'>{challenge.name}</h1>
+                    <h1 className='text-center font-semibold'>{challenge.value}</h1>
+                    <h1 className='text-center font-semibold'>{challenge.tags[0].value}</h1>
+                    <h1 className='text-center font-semibold'>Failed to load info. Retrying in 1 minute.</h1>
                 </div>
             </div>
         )
 
         return (
             <div className="fixed top-0 left-0 w-full h-full grid place-items-center">
-                <div className="h-[200px] w-[200px] bg-red-400">
-                    <h1 className='text-lg font-semibold'>{challenge.name}</h1>
+                <div className="h-[350px] w-[300px] bg-red-400">
+                    <h1 className='text-center text-lg font-semibold'>{challenge.name}</h1>
                     <h1 className='font-semibold'>{challenge.value}</h1>
                     <h1 className='font-semibold'>{challenge.tags[0].value}</h1>
                     <h1 className='font-semibold'>{challenge.description}</h1>
@@ -74,31 +74,21 @@ const ChallengeInfo = async({challenge, solves, handler}: {challenge: ChallengeP
             showSolvePage(!solvePage)
         }
 
-        const SolvePage = () => {
-            return (
-                <div className="w-1/2" onClick={handleClick}>
-                    {`Solves ${solves ? solves.length : null}`}
-                </div>
-            )
-        }
-
         return(
-            <div className="bg-red-200 w-full h-[30px]">
-                <div className="w-1/2" onClick={handleClick}>
-                    Challenge
+            <div className="w-full h-[30px] grid grid-cols-2 items-center p-3">
+                <div className="h-[30px] grid grid-cols-2 items-center">
+                    <div className="text-center w-[90px] bg-[#228B22] rounded-md cursor-pointer" onClick={handleClick}>Challenge</div>
+                    <div className="text-center w-[90px] bg-[#228B22] rounded-md ml-2" onClick={handleClick}>{`Solves ${solves ? solves.length : null}`}</div>
                 </div>
-                <SolvePage/>
-                <div onClick={handler}>
-                    Cross
-                </div>
+                <div className=" text-right" onClick={handler}>❌</div>
             </div>
         )
     }
 
     return(
-        <div className="fixed top-0 left-0 w-full h-full grid place-items-center" onClick={handler}>
-            <div className="h-[200px] w-[200px] bg-red-400">
-                {solves && solves.length && <Header/>}
+        <div className="fixed top-0 left-0 w-full h-full grid place-items-center bg-[#00000050]" onClick={handler}>
+            <div className="h-[500px] w-[400px] bg-[#222] flex justify-center rounded-lg">
+                {solves && <Header/>}
                 {!solvePage && <Info/>}
                 {solvePage && <Solves/>}
             </div>
