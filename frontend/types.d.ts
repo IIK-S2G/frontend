@@ -119,3 +119,53 @@ type HintProps = {
     cost: number 
     content: string
 }
+
+type FullChallengeProps = {
+    id: number
+    name: string
+    value: number
+    initial: number
+    decay: number
+    minimum: number
+    description: string
+    connection_info: string | null
+    category: string
+    state: string
+    max_attempts: number
+    type: string
+    type_data: TypeDataProps
+    solves: number
+    solved_by_me: boolean
+    attempts: number
+    files: string[]
+    tags: TagProps[]
+    hints: HintsProps[]
+    view: string
+}
+
+type HintsProps = {
+    id: number
+    cost: number
+}
+
+type TypeDataProps = {
+    id: string
+    name: string
+    template: {
+        create: string
+        update: string
+        view: string
+    }
+    scripts: {
+        create: string
+        update: string
+        view: string
+    }
+}
+
+type SolverProps = {
+    account_id: number
+    name: string
+    date: string
+    accout_url: string
+}
