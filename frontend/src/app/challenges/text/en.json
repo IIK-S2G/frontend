@@ -2,5 +2,8 @@
     "challenges": "Challenges",
     "empty": "Found no challenges",
     "error": "Error fetching challenges",
-    "submit": "Submit"
+    "submit": "Submit",
+    
+    "hint_start": "Unlock hint for ",
+    "hint_end": " points."
 }

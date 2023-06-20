@@ -20,12 +20,11 @@ const FormatDescription = ({string}: {string: string}) => {
         let fontSizeString = ''
         if (description.length < 300) fontSizeString = 'text-lg'
         if (description.length > 450) fontSizeString = 'text-sm'
-        if (description.length > 550) fontSizeString = 'text-xs'
         return fontSizeString
     }
 
     return (
-        <div className="mx-2">
+        <div className='mb-2'>
             <p className={`${fontSize()}`}>{description}</p>
             <div className='flex mt-2'>
                 <p className={`${fontSize()} font-bold mr-2`}>Difficulty:</p>

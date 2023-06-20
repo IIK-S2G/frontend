@@ -4,8 +4,9 @@ import { useState } from "react"
 import en from '../text/en.json'
 import FormatDescription, { FlagFormat } from "./formatDescription"
 import Attachments from "./attachments"
+import Hints from "./hints"
 
-const Challenge = ({challenge, solves}: {challenge: ChallengeProps | FullChallengeProps, solves: SolverProps[] | null}) => {
+const Challenge = ({challenge, solves, hints}: {challenge: ChallengeProps | FullChallengeProps, solves: SolverProps[] | null, hints: HintProps[] | null}) => {
     const [click, setClick] = useState(false)
     const challengeColor = challenge.solved_by_me ? 'bg-green-500':'bg-[#191919]'
 
@@ -21,12 +22,12 @@ const Challenge = ({challenge, solves}: {challenge: ChallengeProps | FullChallen
                     <h1 className='font-semibold'>{challenge.value}</h1>
                 </div>
             </main>
-            {click && <ChallengeInfo challenge={challenge} solves={solves} handler={handleClick}/>}
+            {click && <ChallengeInfo challenge={challenge} solves={solves} hints={hints} handler={handleClick}/>}
         </>
     )
 }
 
-const ChallengeInfo = ({challenge, solves, handler}: {challenge: ChallengeProps | FullChallengeProps, solves: SolverProps[] | null, handler: () => void}) => {
+const ChallengeInfo = ({challenge, solves, hints, handler}: {challenge: ChallengeProps | FullChallengeProps, solves: SolverProps[] | null, hints: HintProps[] | null, handler: () => void}) => {
     const [solvePage, showSolvePage] = useState(false)
 
     const Info = () => {
@@ -51,15 +52,16 @@ const ChallengeInfo = ({challenge, solves, handler}: {challenge: ChallengeProps 
 
         return (
             <div className="fixed top-0 left-0 w-full h-full grid place-items-center mt-1">
-                <div className="relative h-[420px] w-[360px] mt-8">
+                <div className="relative w-[360px] max-h-[400px] overflow-auto mt-8 bg-blue-400 p-3">
                     <h1 className='text-center text-2xl font-bold'>{challenge.name}</h1>
                     <h1 className='text-center font-bold'>{challenge.value}</h1>
                     <h1 className='grid items-center mx-auto text-center font-semibold bg-[#555] w-[160px] h-[20px] rounded-md text-xs mb-2 mt-1'>{challenge.tags[0]}</h1>
                     <FormatDescription string={challenge.description} />
-                    <div className="flex absolute bottom-0 justify-between w-full">
-                        <Attachments files={challenge.files}/>
-                        <input className="bg-[#555] w-[210px] h-[35px] rounded-lg text-center" placeholder={flagformat}/>
-                        <div className="grid items-center bg-[#228B22] h-[35px] rounded-lg w-[140px]">
+                    {hints && <Hints hints={hints} />}
+                    <Attachments files={challenge.files}/>
+                    <div className="flex justify-between w-full">
+                        <input className="bg-[#555] w-[225px] h-[35px] rounded-lg text-center" placeholder={flagformat}/>
+                        <div className="grid items-center bg-[#228B22] h-[35px] rounded-lg w-[100px]">
                             <h1 className="text-center" onClick={submitFlag}>{en.submit}</h1>
                         </div>
                     </div>
@@ -104,7 +106,7 @@ const ChallengeInfo = ({challenge, solves, handler}: {challenge: ChallengeProps 
 
     return(
         <div className="fixed top-0 left-0 w-full h-full grid place-items-center bg-[#00000050]" onClick={handler}>
-            <div className="h-[500px] w-[400px] bg-[#222] flex justify-center rounded-2xl p-2">
+            <div className="min-h-[500px] w-[400px] bg-[#222] flex justify-center rounded-2xl p-2">
                 {solves && <Header/>}
                 {!solvePage && <Info/>}
                 {solvePage && <Solves/>}
