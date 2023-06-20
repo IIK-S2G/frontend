@@ -1,4 +1,6 @@
 {
     "challenges": "Challenges",
-    "empty": "Found no challenges"
+    "empty": "Found no challenges",
+    "error": "Error fetching challenges",
+    "submit": "Submit"
 }

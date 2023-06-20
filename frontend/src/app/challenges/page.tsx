@@ -1,7 +1,6 @@
-import en from "./text/en.json"
 import Challenges from "./components/challenges"
 
-const ChallengePage = async() => {
+const ChallengePage = () => {
 
     return(
         <main className="grid place-items-center h-[92vh]">

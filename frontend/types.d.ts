@@ -15,13 +15,9 @@ type ChallengeProps = {
     solves: number
     solved_by_me: boolean
     category: string
-    tags: TagProps[]
+    tags: string[]
     template: string
     script: string
-}
-
-type TagProps = {
-    value: string
 }
 
 type UserProps = {
@@ -138,7 +134,7 @@ type FullChallengeProps = {
     solved_by_me: boolean
     attempts: number
     files: string[]
-    tags: TagProps[]
+    tags: string[]
     hints: HintsProps[]
     view: string
 }
