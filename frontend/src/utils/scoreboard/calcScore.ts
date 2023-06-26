@@ -1,12 +1,17 @@
-const calcScore = ({solves, awards}: {solves: SolvesProps[], awards: AwardProps[]}) => {
+const calcScore = ({solves, awards}: {solves: SolvesProps[], awards: AwardProps[] | AwardProfileProps[]}) => {
     const ScoreMap = new Map()
 
     for (let i = 0; i < solves.length; i++) {
         ScoreMap.set(solves[i].date.slice(11,19), solves[i].challenge.value)
     }
-
+    
     for (let i = 0; i < awards.length; i++) {
-        ScoreMap.set(awards[i].date.slice(11,19), awards[i].value)
+        const award = awards[i]
+        if ('value' in award) {
+            ScoreMap.set(award.date.slice(11,19), award.value)
+        } else {
+            ScoreMap.set(award.date.slice(11,19), award.challenge.value);
+        }
     }
 
     const ScoreArray = Array.from(ScoreMap)
@@ -23,8 +28,8 @@ const calcScore = ({solves, awards}: {solves: SolvesProps[], awards: AwardProps[
         ScoreArray[i][1] = ScoreArray[i-1][1] + ScoreArray[i][1]
     }
 
-    const times = ScoreArray.map(pair => pair[0]);
-    const points = ScoreArray.map(pair => pair[1]);
+    const times: string[] = ScoreArray.map(pair => pair[0]);
+    const points: number[] = ScoreArray.map(pair => pair[1]);
 
     return {times, points}
 }

@@ -106,6 +106,18 @@ type AwardProps = {
     requirements: string | null
 }
 
+type AwardProfileProps = {
+    challenge_id: number,
+    ip: string,
+    user: SelfProps,
+    date: string,
+    provided: string,
+    challenge: SolvedChallengeProps,
+    type: string,
+    id: number,
+    team: number | null
+}
+
 type HintProps = {
     challenge_id: number
     type: string
@@ -163,5 +175,59 @@ type SolverProps = {
     account_id: number
     name: string
     date: string
-    accout_url: string
+    account_url: string
+}
+
+type FailProps = {
+    challenge_id: number, 
+    ip: string
+    user: 
+        {
+            name: string
+            id: number
+        }
+    date: string, 
+    provided: string, 
+    challenge: 
+        {
+            name: string
+            id: number
+            value: number
+            category: string
+        }
+    type: string, 
+    id: number, 
+    team: number | null
+}
+
+type ScoreboardProps = {
+    pos: number
+    account_id: number
+    account_url: string
+    account_type: string
+    oauth_id: number | null
+    name: string
+    score: number
+}
+
+type LineChartProps = {
+    dataset: number[]
+    label: string
+    labels: string[]
+    className?: string
+};
+
+type MultiLineChartProps = {
+    dataset: number[][]
+    label: string[]
+    labels: string[][]
+    className?: string
+};
+
+type DatasetEntryProps = {
+    label: string,
+    labels: string[],
+    data: number[],
+    borderColor: string,
+    backgroundColor: string
 }

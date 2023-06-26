@@ -52,7 +52,7 @@ const ChallengeInfo = ({challenge, solves, hints, handler}: {challenge: Challeng
 
         return (
             <div className="fixed top-0 left-0 w-full h-full grid place-items-center mt-1">
-                <div className="relative w-[360px] max-h-[400px] overflow-auto mt-8 bg-blue-400 p-3">
+                <div className="relative w-[360px] max-h-[400px] overflow-auto mt-8 p-3">
                     <h1 className='text-center text-2xl font-bold'>{challenge.name}</h1>
                     <h1 className='text-center font-bold'>{challenge.value}</h1>
                     <h1 className='grid items-center mx-auto text-center font-semibold bg-[#555] w-[160px] h-[20px] rounded-md text-xs mb-2 mt-1'>{challenge.tags[0]}</h1>
