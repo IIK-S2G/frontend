@@ -9,7 +9,7 @@ const ScoreBoardEntry = ({user, userCount}: {user: ScoreboardProps, userCount: n
     const backgroundColors: { [key: number]: string } = { 1: 'FFD700', 2: 'c0c0c0', 3: 'cd7f32' };
     
     // Checks if the user is top 3, if so gives gold, silver or bronze color, otherwise checks if its top 10 for blue, or anything else for gray
-    const backgroundColor = backgroundColors[user.pos] || ((user.pos >= 4 && user.pos <= 10) ? '005' : '191919');
+    const backgroundColor = backgroundColors[user.pos] || ((user.pos >= 4 && user.pos <= 10) ? '152238' : '191919');
 
     return (
         <div className={`flex bg-[#${backgroundColor}] h-[50px] mb-4 ${margin} ${overrideMargin} ${user.pos < 4 ? 'font-bold text-[#000]':''} rounded-xl px-4`}>

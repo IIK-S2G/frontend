@@ -67,13 +67,13 @@ type ProfileProps = {
     score: number | null
 }
 
-type SolvesProps = {
+type UserSolvesProps = {
     challenge_id: number
     ip: string
     user: SelfProps
     date: string
     provided: string
-    challenge: SolvedChallengeProps
+    challenge: UserChallengeProps
     type: string
     id: number 
     team: number | null
@@ -84,7 +84,7 @@ type SelfProps = {
     id: number
 }
 
-type SolvedChallengeProps = {
+type UserChallengeProps = {
     name: string
     id: number
     value: number
@@ -112,7 +112,7 @@ type AwardProfileProps = {
     user: SelfProps,
     date: string,
     provided: string,
-    challenge: SolvedChallengeProps,
+    challenge: UserChallengeProps,
     type: string,
     id: number,
     team: number | null
@@ -171,7 +171,7 @@ type TypeDataProps = {
     }
 }
 
-type SolverProps = {
+type ChallengeSolvesProps = {
     account_id: number
     name: string
     date: string
@@ -181,20 +181,10 @@ type SolverProps = {
 type FailProps = {
     challenge_id: number, 
     ip: string
-    user: 
-        {
-            name: string
-            id: number
-        }
+    user: SelfProps
     date: string, 
     provided: string, 
-    challenge: 
-        {
-            name: string
-            id: number
-            value: number
-            category: string
-        }
+    challenge: UserChallengeProps
     type: string, 
     id: number, 
     team: number | null

@@ -2,7 +2,7 @@ import LineChart from '@/components/lineChart';
 import getAwards from '@/utils/awards/getAwards';
 import calcScore from '@/utils/scoreboard/calcScore';
 import getScoreboard from '@/utils/scoreboard/getScoreboard';
-import getSolves from '@/utils/solves/getSolves';
+import getUserSolves from '@/utils/solves/getUserSolves';
 
 const Chart = async(): Promise<JSX.Element> => {
     const scoreboard = await getScoreboard()
@@ -13,7 +13,7 @@ const Chart = async(): Promise<JSX.Element> => {
         const names: string[] = []
 
         scoreboard.forEach(async(user) => {
-            const solves = await getSolves(undefined, user.account_id)
+            const solves = await getUserSolves(user.account_id)
             const awards = await getAwards(user.account_id)
 
             if (solves && awards) {
