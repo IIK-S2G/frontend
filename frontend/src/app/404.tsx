@@ -9,7 +9,7 @@ const Custom404 = (): JSX.Element => {
             <div className='flex place-items-center'>
                 <h1 className='text-3xl'>404</h1>
                 <Line width={1} height={40} className='mx-4' />
-                <h1 className='text-3xl'>Page not found</h1>
+                <h1 className='text-3xl'>This page could not be found.</h1>
             </div>
             <Quote type={404}/>
         </main>
