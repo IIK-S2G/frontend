@@ -5,5 +5,6 @@
     "submit": "Submit",
     
     "hint_start": "Unlock hint for ",
-    "hint_end": " points."
+    "hint_end": " points.",
+    "confirm": "Are you sure?"
 }

@@ -4,11 +4,11 @@ import { useState } from "react"
 import ChallengeInfo from "./challengeInfo"
 
 const Challenge = ({challenge, solves, hints}: {challenge: ChallengeProps | FullChallengeProps, solves: ChallengeSolvesProps[] | null, hints: HintProps[] | null}) => {
-    const [click, setClick] = useState(false)
+    const [showChallengeInfo, setShowChallengeInfo] = useState(false)
     const challengeColor = challenge.solved_by_me ? 'bg-green-500':'bg-[#191919]'
 
     const handleClick = () => {
-        setClick(!click)
+        setShowChallengeInfo(!showChallengeInfo)
     }
 
     return(
@@ -19,7 +19,7 @@ const Challenge = ({challenge, solves, hints}: {challenge: ChallengeProps | Full
                     <h1 className='font-semibold'>{challenge.value}</h1>
                 </div>
             </main>
-            {click && <ChallengeInfo challenge={challenge} solves={solves} hints={hints} handler={handleClick}/>}
+            {showChallengeInfo && <ChallengeInfo challenge={challenge} solves={solves} hints={hints} handler={handleClick}/>}
         </>
     )
 }

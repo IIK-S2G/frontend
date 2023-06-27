@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * Removes HTML formatting from a string, for example unicodes etc
  * @param {string} string   String to cleanup
