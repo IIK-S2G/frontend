@@ -1,4 +1,4 @@
-const calcScore = ({solves, awards}: {solves: SolvesProps[], awards: AwardProps[] | AwardProfileProps[]}) => {
+const calcScore = ({solves, awards}: {solves: UserSolvesProps[], awards: AwardProps[] | AwardProfileProps[]}) => {
     const ScoreMap = new Map()
 
     for (let i = 0; i < solves.length; i++) {

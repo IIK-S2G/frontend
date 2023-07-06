@@ -4,5 +4,7 @@
     "name": "Name",
     "website": "Website",
     "affiliation": "Affiliation",
-    "country": "Country"
+    "country": "Country",
+    "page": "Page",
+    "showall": "Show all"
 }

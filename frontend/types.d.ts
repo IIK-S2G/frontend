@@ -185,7 +185,7 @@ type FailProps = {
     date: string, 
     provided: string, 
     challenge: UserChallengeProps
-    type: string, 
+    type: string,
     id: number, 
     team: number | null
 }
@@ -220,4 +220,16 @@ type DatasetEntryProps = {
     data: number[],
     borderColor: string,
     backgroundColor: string
+}
+
+type UserListProps = {
+    name: string
+    country: string | null
+    team_id: number | null,
+    website: string | null,
+    id: number,
+    oauth_id: number | null,
+    affiliation: string | null,
+    fields: [],
+    bracket: null
 }

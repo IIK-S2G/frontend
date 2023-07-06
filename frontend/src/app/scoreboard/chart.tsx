@@ -18,9 +18,11 @@ const Chart = async(): Promise<JSX.Element> => {
 
             if (solves && awards) {
                 const ScoreArray = calcScore({solves, awards})
-                names.push(user.name)
-                dataset.push(ScoreArray.points)
-                labels.push(ScoreArray.times)
+                if (user.pos < 11) {
+                    names.push(user.name)
+                    dataset.push(ScoreArray.points)
+                    labels.push(ScoreArray.times)
+                }
             }
         })
 
