@@ -21,7 +21,7 @@ const Attachments = ({files}: {files: string[]}) => {
     const adjustWidthByFileNameLength = (file: string) => {
         const name = fileName(file)
         if (name.length > 8) {
-            return 'w-[' + 10*name.length + 'px]'
+            return 10*name.length
         }
     }
 
@@ -29,7 +29,7 @@ const Attachments = ({files}: {files: string[]}) => {
         <div className="grid grid-cols-3 bottom-12 w-full">
             {files.map((file) => {
                 return(
-                    <div key={file} className={`grid items-center ${adjustWidthByFileNameLength(file)} bg-[#482D81] h-[35px] rounded-lg px-2 mr-3 mb-2`}>
+                    <div key={file} style={{width: adjustWidthByFileNameLength(file)}} className={`grid items-center bg-[#482D81] h-[35px] rounded-lg px-2 mr-3 mb-2`}>
                         <Link key={file} className="text-center" href={`${api+file}`}>{fileName(file)}</Link>
                     </div>
                 )

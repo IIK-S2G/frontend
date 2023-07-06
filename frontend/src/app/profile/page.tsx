@@ -1,5 +1,4 @@
 import Profile from "./components/profile"
-import en from "./text/en.json"
 
 const ProfilePage = (): JSX.Element => {
 
