@@ -38,16 +38,16 @@
             {
                 "name": "Masrur Masqub Utash",
                 "mail": "masrur.m.utash@ntnu.no"
+            },
+            {
+                "name": "Jonny Ngo Luong",
+                "mail": "jonnynl@ntnu.no"
             }
         ]
     },
     "helpTrondheim": {
         "title": "Trondheim",
         "people": [
-            {
-                "name": "Jonny Ngo Luong",
-                "mail": "jonnynl@ntnu.no"
-            },
             {
                 "name": "Shayan Alinejad",
                 "mail": "shayan.alinejad@ntnu.no"

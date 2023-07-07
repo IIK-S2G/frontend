@@ -50,7 +50,7 @@ const ShowInfo = async({uid}: {uid:number}) => {
 
     let ScoreArray = calcScore({solves, awards})
 
-    if (!profile) return <h1 className='grid place-items-center text-4xl font-bold mb-4'>{en.error}</h1>
+    if (!profile) return <h1 className='grid place-items-center text-2xl font-bold mb-4'>{en.error}</h1>
 
     return(
         <main className="grid place-items-center w-full rounded-xl max-w-[98%] min-h-[92vh] mx-8">
