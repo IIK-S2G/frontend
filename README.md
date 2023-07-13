@@ -1,6 +1,20 @@
 New frontend for S2G
 
-Structure
+The project has come to a temporary standstill due to lack of knowledge. It will be continued throughout the Autumn of 2023 as more knowledge is consumed.
+
+What is left?
+```
+- Post requests for solving challenges, updating solves, fails etc.
+- Post requests on profile for updating username, password etc.
+- Connecting a Postmaster or similar mail service to reset password
+- Login mechanisms, intended to go through the standard ctfd site
+- Sound effects for scoreboard
+- Ability to view other peoples profiles
+
+- maybe it will be quicker to just make a backend?
+```
+
+Project Structure:
 ```
 .
 └── S2Gfrontend/
