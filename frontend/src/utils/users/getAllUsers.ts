@@ -14,5 +14,5 @@ export default async function getAllUsers(): Promise<UserListProps[]> {
 
     const users = (await Promise.all(promises)).flat();
 
-    return users.sort((a: UserProps, b: UserProps) => a.name.localeCompare(b.name))
+    return users.sort((a, b) => a.name.localeCompare(b.name))
 }

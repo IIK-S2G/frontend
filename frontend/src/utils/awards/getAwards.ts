@@ -1,7 +1,8 @@
 import {base_url, ctfd_token} from "@parent/secret.json"
 
-export default async function getChallenge(id: number): Promise<FullChallengeProps | null> {
-    const url = `${base_url}challenges/${id}`
+export default async function getAwards(uid: number | undefined): Promise<AwardProps[]> {
+    const user = uid ? uid : 'me'
+    const url = `${base_url}users/${user}/awards`
 
     const res = await fetch(url, {
             headers: {
@@ -11,6 +12,6 @@ export default async function getChallenge(id: number): Promise<FullChallengePro
             next: { revalidate: 60 }
     })
 
-    if (!res.ok) return null
-    return (await res.json()).data
+    if (!res.ok) return []
+    else return (await res.json()).data
 }

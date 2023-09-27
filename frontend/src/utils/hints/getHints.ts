@@ -1,7 +1,7 @@
 import {base_url, ctfd_token} from "@parent/secret.json"
 
-export default async function getChallenge(id: number): Promise<FullChallengeProps | null> {
-    const url = `${base_url}challenges/${id}`
+export default async function getHints(id: number): Promise<HintProps[] | null> {
+    const url = `${base_url}challenges/${id}/hints`
 
     const res = await fetch(url, {
             headers: {

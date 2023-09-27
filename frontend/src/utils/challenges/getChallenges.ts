@@ -1,6 +1,6 @@
 import {base_url, ctfd_token} from "@parent/secret.json"
 
-const getChallenges = async(): Promise<ChallengeProps[] | null> => {
+export default async function getChallenges(): Promise<ChallengeProps[] | null> {
     const url = `${base_url}challenges`
 
     const res = await fetch(url, {
@@ -14,5 +14,3 @@ const getChallenges = async(): Promise<ChallengeProps[] | null> => {
     if (!res.ok) return null
     else return (await res.json()).data
 }
-
-export default getChallenges

@@ -1,7 +1,7 @@
 import findBestIndex from "./findBestIndex"
 
 // data = scorearray, label = current label
-export default function checkLabel(labels: string[], label: string, data: any[]) {
+export default function checkLabel (labels: string[], label: string, data: any[]) {
     let bestIndex = findBestIndex(label, labels)
 
     // add at start
