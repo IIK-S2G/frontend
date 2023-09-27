@@ -4,19 +4,19 @@ import { useState } from "react"
 import en from "./text/en.json"
 import Link from "next/link"
 
-const ResetPassword = (): JSX.Element => {
+export default function ResetPassword(): JSX.Element {
     const [username, setUsername] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
-    const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    function handleUsernameChange(event: React.ChangeEvent<HTMLInputElement>) {
         setUsername(event.target.value)
     }
 
-    const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    function handlePasswordChange(event: React.ChangeEvent<HTMLInputElement>) {
         setPassword(event.target.value)
     }
 
-    const handlePasswordReset = () => {
+    function handlePasswordReset() {
         // Reset the password and send a mail to the user
     }
 
@@ -34,5 +34,3 @@ const ResetPassword = (): JSX.Element => {
         </main>
     )
 }
-
-export default ResetPassword

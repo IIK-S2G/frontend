@@ -2,7 +2,7 @@ import Image from 'next/image'
 import en from "./text/en.json"
 import Link from 'next/link'
 
-const Home = (): JSX.Element => {
+export default function Home(): JSX.Element {
     return (
         <main className="grid place-items-center">
             <Image width={500} height={200} src="/images/logo/s2g_logo_white.png" alt="Logo"/>
@@ -40,5 +40,3 @@ const Home = (): JSX.Element => {
         </main>
       )
 }
-
-export default Home

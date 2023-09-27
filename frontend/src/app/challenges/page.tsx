@@ -1,6 +1,6 @@
 import Challenges from "./components/challenges"
 
-const ChallengePage = () => {
+export default function ChallengePage () {
 
     return(
         <main className="grid place-items-center h-[92vh]">
@@ -10,5 +10,3 @@ const ChallengePage = () => {
         </main>
     )
 }
-
-export default ChallengePage

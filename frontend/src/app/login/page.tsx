@@ -4,19 +4,19 @@ import { useState } from "react"
 import en from "./text/en.json"
 import Link from "next/link"
 
-const Login = (): JSX.Element => {
+export default function Login(): JSX.Element {
     const [username, setUsername] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
-    const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    function handleUsernameChange(event: React.ChangeEvent<HTMLInputElement>) {
         setUsername(event.target.value)
     }
 
-    const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    function handlePasswordChange(event: React.ChangeEvent<HTMLInputElement>) {
         setPassword(event.target.value)
     }
 
-    const handleLogin = () => {
+    function handleLogin() {
         // Handle the login call
     }
 
@@ -35,5 +35,3 @@ const Login = (): JSX.Element => {
         </main>
     )
 }
-
-export default Login

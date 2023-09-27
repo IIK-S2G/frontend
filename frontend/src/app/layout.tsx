@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Secret flag: ###',
 }
 
-const RootLayout = ({children}: {children: React.ReactNode}): JSX.Element => {
+export default function RootLayout({children}: {children: React.ReactNode}): JSX.Element {
     return (
         <html lang="en">
             <body>
@@ -19,5 +19,3 @@ const RootLayout = ({children}: {children: React.ReactNode}): JSX.Element => {
         </html>
     )
 }
-
-export default RootLayout

@@ -1,6 +1,6 @@
 import en from "./text/en.json"
 
-const Scoreboard = (): JSX.Element => {
+export default function Scoreboard(): JSX.Element {
 
     return(
         <main className="grid place-items-center h-[92vh]">
@@ -10,5 +10,3 @@ const Scoreboard = (): JSX.Element => {
         </main>
     )
 }
-
-export default Scoreboard

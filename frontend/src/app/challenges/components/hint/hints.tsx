@@ -5,7 +5,7 @@ import Hint from './hint';
  * @param {HintProps[]} hints Array of hint objects
  * @returns Hint components as a JSX Element
  */
-const Hints = ({hints}: {hints: HintProps[]}) => {
+export default function Hints ({hints}: {hints: HintProps[]}) {
 
     return (
         <div className="bottom-12 w-full">
@@ -15,5 +15,3 @@ const Hints = ({hints}: {hints: HintProps[]}) => {
         </div>
     ) 
 }
-
-export default Hints

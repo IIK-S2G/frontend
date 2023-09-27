@@ -1,7 +1,7 @@
 import Line from '@/components/line'
 import en from '../text/en.json'
 
-const UserHeader = (): JSX.Element => {
+export default function UserHeader(): JSX.Element {
     return(
         <main className="grid h-[50px]">
             <div className='grid grid-cols-4 pl-10 bg-[#111] rounded-lg h-[50px] items-center'>
@@ -13,5 +13,3 @@ const UserHeader = (): JSX.Element => {
         </main>
     )
 }
-
-export default UserHeader

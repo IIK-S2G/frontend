@@ -8,7 +8,7 @@ import compareDates from "./compareDates"
  * 
  * @returns 0 = at the start | -1 = at the end | -2 = already exists | any other number = best index
  */
-const findBestIndex = (label: string, labels: string[]) => {
+export default function findBestIndex(label: string, labels: string[]) {
     for (let i = 0; i < labels.length; i++) {
         let result = compareDates(label, labels[i])
         if (!result) return -2      // entry already exists
@@ -17,5 +17,3 @@ const findBestIndex = (label: string, labels: string[]) => {
     }
     return -1
 }
-
-export default findBestIndex

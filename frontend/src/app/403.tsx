@@ -3,7 +3,7 @@
 import Line from '../components/line'
 import Quote from '../components/quote/quote'
 
-const Custom403 = (): JSX.Element => {
+export default function Custom403(): JSX.Element {
     return (
         <main className="grid place-items-center h-[92vh]">
             <div className='flex place-items-center'>
@@ -15,5 +15,3 @@ const Custom403 = (): JSX.Element => {
         </main>
     )
 }
-
-export default Custom403

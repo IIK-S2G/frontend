@@ -1,11 +1,11 @@
 import en from '../../text/en.json'
 import { useState } from 'react'
 
-const Hint = ({hint}: {hint: HintProps}) => {
+export default function Hint({hint}: {hint: HintProps}) {
     const [showConfirmationPopup, setShowConfirmationPopup] = useState(false)
     const [showHint, setShowHint] = useState(false)
     console.log(showHint)
-    const handleClick = () => {
+    function handleClick() {
         // if user has unlocked hint
         if (true) {
             setShowHint(true)
@@ -15,12 +15,12 @@ const Hint = ({hint}: {hint: HintProps}) => {
         }
     }
 
-    const ConfirmationPopup = () => {
-        const handleYes = () => {
+    function ConfirmationPopup() {
+        function handleYes() {
             setShowHint(true)
         }
 
-        const handleNo = () => {
+        function handleNo() {
             setShowConfirmationPopup(false)
         }
 
@@ -45,5 +45,3 @@ const Hint = ({hint}: {hint: HintProps}) => {
         </div>
     )
 }
-
-export default Hint

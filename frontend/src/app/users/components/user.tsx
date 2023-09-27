@@ -1,9 +1,10 @@
 import { useState } from "react"
 import ShowInfo from "./showInfo"
 
-const User = ({user}: {user: UserListProps}) => {
+export default function User ({user}: {user: UserListProps}) {
     const [showInfo, setShowInfo] = useState<boolean>(false)
-    const handleClick = () => {
+    
+    function handleClick() {
         setShowInfo(!showInfo)
     }
 
@@ -19,5 +20,3 @@ const User = ({user}: {user: UserListProps}) => {
         </main>
     )
 }
-
-export default User

@@ -3,11 +3,17 @@
 import { useState } from "react"
 import ChallengeInfo from "./challengeInfo"
 
-const Challenge = ({challenge, solves, hints}: {challenge: ChallengeProps | FullChallengeProps, solves: ChallengeSolvesProps[] | null, hints: HintProps[] | null}) => {
+type ChallengeComponentProps = {
+    challenge: ChallengeProps | FullChallengeProps
+    solves: ChallengeSolvesProps[] | null
+    hints: HintProps[] | null
+}
+
+export default function Challenge ({challenge, solves, hints}: ChallengeComponentProps) {
     const [showChallengeInfo, setShowChallengeInfo] = useState(false)
     const challengeColor = challenge.solved_by_me ? 'bg-green-500':'bg-[#191919]'
 
-    const handleClick = () => {
+    function handleClick() {
         setShowChallengeInfo(!showChallengeInfo)
     }
 
@@ -23,5 +29,3 @@ const Challenge = ({challenge, solves, hints}: {challenge: ChallengeProps | Full
         </>
     )
 }
-
-export default Challenge

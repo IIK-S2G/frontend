@@ -5,20 +5,20 @@ import Link from 'next/link';
  * @param {string[]} files  Array of file links
  * @returns                 Attachment download buttons
  */
-const Attachments = ({files}: {files: string[]}) => {
+export default function Attachments({files}: {files: string[]}) {
     
     if (!files.length) return <div/>
 
     // downloads will work if you remove the last slash (todo), but there is some error causing it to be downloaded repeatedly
     const api = "https://s2gctf.ncr.ntnu.no/"
 
-    const fileName = (file: string) => {
+    function fileName(file: string) {
         const start = file.lastIndexOf("/")+1
         const end = file.indexOf("?")
         return file.slice(start, end)
     }
 
-    const adjustWidthByFileNameLength = (file: string) => {
+    function adjustWidthByFileNameLength(file: string) {
         const name = fileName(file)
         if (name.length > 8) {
             return 10*name.length
@@ -37,5 +37,3 @@ const Attachments = ({files}: {files: string[]}) => {
         </div>
     )
 }
-
-export default Attachments

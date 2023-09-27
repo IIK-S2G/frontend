@@ -2,7 +2,7 @@ import en from "./text/en.json"
 import List from "./list"
 import Chart from "./chart"
 
-const Scoreboard = (): JSX.Element => {
+export default function Scoreboard (): JSX.Element {
 
     return(
         <main className="grid place-items-center h-[92vh] mx-8">
@@ -14,5 +14,3 @@ const Scoreboard = (): JSX.Element => {
         </main>
     )
 }
-
-export default Scoreboard

@@ -4,24 +4,24 @@ import { useState } from "react"
 import en from "./text/en.json"
 import Link from "next/link"
 
-const Register = (): JSX.Element => {
+export default function Register(): JSX.Element {
     const [username, setUsername] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
-    const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    function handleUsernameChange(event: React.ChangeEvent<HTMLInputElement>) {
         setUsername(event.target.value)
     }
 
-    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    function handleEmailChange(event: React.ChangeEvent<HTMLInputElement>) {
         setEmail(event.target.value)
     }
 
-    const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    function handlePasswordChange(event: React.ChangeEvent<HTMLInputElement>) {
         setPassword(event.target.value)
     }
 
-    const handleRegister = () => {
+    function handleRegister() {
         // Handle the register call
     }
 
@@ -41,5 +41,3 @@ const Register = (): JSX.Element => {
         </main>
     )
 }
-
-export default Register

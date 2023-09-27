@@ -7,7 +7,7 @@ import getFails from '@/utils/fails/getFails';
 import getUserSolves from '@/utils/solves/getUserSolves';
 import getProfile from '@/utils/profile/getProfile';
 
-const ProfileChallenges = ({challenge}: {challenge: UserSolvesProps}): JSX.Element => {
+export function ProfileChallenges({challenge}: {challenge: UserSolvesProps}): JSX.Element {
     const date = en.month[Number(challenge.date[5] + challenge.date[6])-1] + ' ' + challenge.date[8] + challenge.date[9] + (Number(String(challenge.date[8] + challenge.date[9]).slice(-1)) == 1 ? "st, " : Number(String(challenge.date[8] + challenge.date[9]).slice(-1)) == 2 ? "nd, " : Number(challenge.date[8] + challenge.date[9]) == 3 ? "rd, " : Number(challenge.date[8] + challenge.date[9]) == 23 ? "rd, ": "th, ") + challenge.date.slice(11, 19) + " GMT."
     
     return(
@@ -20,7 +20,7 @@ const ProfileChallenges = ({challenge}: {challenge: UserSolvesProps}): JSX.Eleme
     )
 }
 
-const Award = async({award}: {award: AwardProps}): Promise<JSX.Element> => {
+export async function Award({award}: {award: AwardProps}): Promise<JSX.Element> {
     const date = en.month[Number(award.date[5] + award.date[6])-1] + ' ' + award.date[8] + award.date[9] + (Number(String(award.date[8] + award.date[9]).slice(-1)) == 1 ? "st, " : Number(String(award.date[8] + award.date[9]).slice(-1)) == 2 ? "nd, " : Number(award.date[8] + award.date[9]) == 3 ? "rd, " : Number(award.date[8] + award.date[9]) == 23 ? "rd, ": "th, ") + award.date.slice(11, 19) + " GMT."
     const category = award.category == "hints" ? "Hint" : award.category
 
@@ -34,7 +34,7 @@ const Award = async({award}: {award: AwardProps}): Promise<JSX.Element> => {
     )
 }
 
-const ShowInfo = async({uid}: {uid:number}) => {
+export default async function ShowInfo({uid}: {uid:number}) {
     const profile = await getProfile(uid)
     const solves = await getUserSolves(uid)
     const fails = await getFails(uid)
@@ -103,5 +103,3 @@ const ShowInfo = async({uid}: {uid:number}) => {
         </main>
     )
 }
-
-export default ShowInfo

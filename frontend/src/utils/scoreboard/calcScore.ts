@@ -1,4 +1,4 @@
-const calcScore = ({solves, awards}: {solves: UserSolvesProps[], awards: AwardProps[] | AwardProfileProps[]}) => {
+export default function calcScore({solves, awards}: {solves: UserSolvesProps[], awards: AwardProps[] | AwardProfileProps[]}) {
     const ScoreMap = new Map()
 
     for (let i = 0; i < solves.length; i++) {
@@ -33,5 +33,3 @@ const calcScore = ({solves, awards}: {solves: UserSolvesProps[], awards: AwardPr
 
     return {times, points}
 }
-
-export default calcScore

@@ -1,4 +1,9 @@
-const ScoreBoardEntry = ({user, userCount}: {user: ScoreboardProps, userCount: number}): JSX.Element => {
+type ScoreboardEntryProps = {
+    user: ScoreboardProps
+    userCount: number
+}
+
+export default function ScoreBoardEntry ({user, userCount}: ScoreboardEntryProps): JSX.Element {
 
     // Adding left margin for top 5, right margin for top 6-10, otherwise right for odd numbers and left for even
     const margin = user.pos < 10 ? user.pos < 6 ? 'mr-4' : 'ml-4' : user.pos % 2 ? 'mr-4' : 'ml-4'
@@ -20,5 +25,3 @@ const ScoreBoardEntry = ({user, userCount}: {user: ScoreboardProps, userCount: n
         </div>
     )
 }
-
-export default ScoreBoardEntry

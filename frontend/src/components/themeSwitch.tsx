@@ -1,11 +1,11 @@
 import { useAppSelector, useAppDispatch } from '../redux/hooks';
 import { setTheme, changeTheme, resetTheme } from '../redux/reducers/themeSlice';
 
-const ThemeSwitch = (): JSX.Element => {
+export default function ThemeSwitch(): JSX.Element {
     const theme = useAppSelector(setTheme)
     const dispatch = useAppDispatch()
 
-    const handleClick = () => {
+    function handleClick() {
         theme.payload > 0 ? dispatch(resetTheme()) : dispatch(changeTheme())
     }
 
@@ -17,5 +17,3 @@ const ThemeSwitch = (): JSX.Element => {
         </div>
     )
 }
-
-export default ThemeSwitch

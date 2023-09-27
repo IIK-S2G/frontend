@@ -5,7 +5,7 @@ import Link from "next/link";
  * @param {string} string String to cleanup
  * @returns JSX Element with Images and Links
  */
-const FormatDescription = ({string}: {string: string}) => {
+export default function FormatDescription ({string}: {string: string}) {
 
     // Different regex patterns
     const diffReg = /(- \*\*Difficulty:\*\*)/;
@@ -44,7 +44,7 @@ const FormatDescription = ({string}: {string: string}) => {
     description = description.replace('  ', ' ')
 
     // Setting the fontsize based on the text length
-    const fontSize = () => {
+    function fontSize() {
         let fontSizeString = ''
         if (description.length < 300) fontSizeString = 'text-lg'
         if (description.length > 450) fontSizeString = 'text-sm'
@@ -79,7 +79,7 @@ const FormatDescription = ({string}: {string: string}) => {
     )
 }
 
-export const FlagFormat = (string: string) => {
+export function FlagFormat(string: string) {
     const diffreg = /(- \*\*Difficulty:\*\*)/;
     const flagreg = /(- \*\*Flag format:\*\*)/;
     const exflagreg = /(- \*\*Example flag:\*\*)/;
@@ -90,5 +90,3 @@ export const FlagFormat = (string: string) => {
     
     return exflag[0]
 }
-
-export default FormatDescription

@@ -1,6 +1,6 @@
 import Profile from "./components/profile"
 
-const ProfilePage = (): JSX.Element => {
+export default function ProfilePage(): JSX.Element {
 
     return(
         <main className="grid place-items-center h-[92vh] w-full">
@@ -10,5 +10,3 @@ const ProfilePage = (): JSX.Element => {
         </main>
     )
 }
-
-export default ProfilePage

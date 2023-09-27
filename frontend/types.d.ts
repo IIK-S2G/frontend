@@ -205,14 +205,14 @@ type LineChartProps = {
     label: string
     labels: string[]
     className?: string
-};
+}
 
 type MultiLineChartProps = {
     dataset: number[][]
     label: string[]
     labels: string[][]
     className?: string
-};
+}
 
 type DatasetEntryProps = {
     label: string,

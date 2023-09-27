@@ -5,7 +5,7 @@ import getUsers from "./getUsers"
  * Fetches all users and sorts them alphabeticly
  * @returns Array of user objects
  */
-const getAllUsers = async(): Promise<UserListProps[]> => {
+export default async function getAllUsers(): Promise<UserListProps[]> {
     const pages = await getUserPages()
 
     const promises = Array.from({ length: pages }, (_, i) =>
@@ -14,7 +14,5 @@ const getAllUsers = async(): Promise<UserListProps[]> => {
 
     const users = (await Promise.all(promises)).flat();
 
-    return users.sort((a, b) => a.name.localeCompare(b.name))
+    return users.sort((a: UserProps, b: UserProps) => a.name.localeCompare(b.name))
 }
-
-export default getAllUsers

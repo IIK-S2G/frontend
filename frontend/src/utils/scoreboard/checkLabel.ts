@@ -1,7 +1,7 @@
 import findBestIndex from "./findBestIndex"
 
 // data = scorearray, label = current label
-const checkLabel = (labels: string[], label: string, data: any[]) => {
+export default function checkLabel(labels: string[], label: string, data: any[]) {
     let bestIndex = findBestIndex(label, labels)
 
     // add at start
@@ -22,5 +22,3 @@ const checkLabel = (labels: string[], label: string, data: any[]) => {
         data.splice(bestIndex, 0, data[bestIndex-1])
     }
 }
-
-export default checkLabel

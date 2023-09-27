@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const RightNav = (): JSX.Element => {
+export default function RightNav(): JSX.Element {
     return(
         <div className="flex items-center ml-96">
             <div className="inline-block flex mx-4">
@@ -48,5 +48,3 @@ const RightNav = (): JSX.Element => {
         </div>
     )
 }
-
-export default RightNav

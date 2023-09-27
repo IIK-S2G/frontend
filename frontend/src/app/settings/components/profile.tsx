@@ -1,7 +1,7 @@
 // this file will require a user parameter and use client at some point
 import en from '../text/en.json'
 
-const Profile = (): JSX.Element => {
+export default function Profile(): JSX.Element {
     return(
         <main className="bg-[#191919] ml-8 mr-4 p-10 h-[92vh] overflow-auto rounded-xl w-1/2">
             <div className='flex'>
@@ -29,5 +29,3 @@ const Profile = (): JSX.Element => {
         </main>
     )
 }
-
-export default Profile

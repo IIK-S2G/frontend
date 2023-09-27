@@ -4,12 +4,18 @@ import FormatDescription, { FlagFormat } from "./formatDescription"
 import Attachments from "./attachments"
 import Hints from "./hint/hints"
 
-const ChallengeInfo = ({challenge, solves, hints, handler}: {challenge: ChallengeProps | FullChallengeProps, solves: ChallengeSolvesProps[] | null, hints: HintProps[] | null, handler: () => void}) => {
+type ChallengeInfoProps = {
+    challenge: ChallengeProps | FullChallengeProps
+    solves: ChallengeSolvesProps[] | null
+    hints: HintProps[] | null
+    handler: () => void
+}
+export default function ChallengeInfo ({challenge, solves, hints, handler}: ChallengeInfoProps) {
     const [solvePage, showSolvePage] = useState(false)
 
-    const Info = () => {
+    function Info () {
 
-        const submitFlag = () => {
+        function submitFlag() {
             // submit flag logic
         }
 
@@ -46,7 +52,7 @@ const ChallengeInfo = ({challenge, solves, hints, handler}: {challenge: Challeng
         )
     }
 
-    const Solves = () => {
+    function Solves() {
         if (!solves) return(<div>Failed to load solves... Retrying in 1 minute.</div>)
 
         return (
@@ -69,9 +75,9 @@ const ChallengeInfo = ({challenge, solves, hints, handler}: {challenge: Challeng
         )
     }
 
-    const Header = () => {
+    function Header () {
 
-        const handleClick = () => {
+        function handleClick() {
             showSolvePage(!solvePage)
         }
 
@@ -96,5 +102,3 @@ const ChallengeInfo = ({challenge, solves, hints, handler}: {challenge: Challeng
         </div>
     )
 }
-
-export default ChallengeInfo

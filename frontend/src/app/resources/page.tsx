@@ -4,7 +4,7 @@ import Link from 'next/link'
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 
-const Resources = (): JSX.Element => {
+export default function Resources(): JSX.Element {
     return (
         <main className="grid place-items-center h-[92vh] w-full">
             <div className='flex mx-8'>
@@ -83,5 +83,3 @@ const Resources = (): JSX.Element => {
         </main>
       )
 }
-
-export default Resources

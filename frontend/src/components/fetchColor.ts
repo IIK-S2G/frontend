@@ -8,7 +8,7 @@ type FetchColorProps = {
     identifier: Identifier
 }
 
-const FetchColor = ({theme, identifier}: FetchColorProps): string => {
+export default function FetchColor({theme, identifier}: FetchColorProps): string {
     switch (theme) {
         case 1: 
             switch (identifier) {
@@ -31,5 +31,3 @@ const FetchColor = ({theme, identifier}: FetchColorProps): string => {
             }
     }
 }
-
-export default FetchColor

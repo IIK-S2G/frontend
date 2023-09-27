@@ -8,7 +8,7 @@ type QuoteType = {
   quoteNO: string;
 };
 
-const Quote = ({type}: {type: 403 | 404}): JSX.Element => {
+export default function Quote({type}: {type: 403 | 404}): JSX.Element {
 //   const [randomQuote, setRandomQuote] = useState<QuoteType>(quotes[0]);
 
 //   useEffect(() => {
@@ -24,5 +24,3 @@ const Quote = ({type}: {type: 403 | 404}): JSX.Element => {
         </div>
     );
 };
-
-export default Quote;

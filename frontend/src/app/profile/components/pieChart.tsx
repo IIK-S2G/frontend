@@ -5,7 +5,7 @@ import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const PieChart = ({dataset, label, labels}: {dataset: number[], label: string, labels: string[]}): JSX.Element => {
+export default function PieChart({dataset, label, labels}: {dataset: number[], label: string, labels: string[]}): JSX.Element {
     const data = {
         labels: labels,
         datasets: [
@@ -24,5 +24,3 @@ const PieChart = ({dataset, label, labels}: {dataset: number[], label: string, l
         </div>
     )
 }
-
-export default PieChart

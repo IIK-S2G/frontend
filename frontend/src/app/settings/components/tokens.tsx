@@ -1,6 +1,6 @@
 import en from '../text/en.json'
 
-const Token = (): JSX.Element => {
+export default function Token(): JSX.Element {
     return(
         <main className="bg-[#191919] mr-8 ml-4 p-10 h-[92vh] w-1/2 overflow-auto rounded-xl">
             <div className='flex'>
@@ -16,5 +16,3 @@ const Token = (): JSX.Element => {
         </main>
     )
 }
-
-export default Token

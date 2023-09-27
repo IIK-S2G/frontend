@@ -2,7 +2,7 @@ import Profile from "./components/profile"
 import Token from "./components/tokens"
 import en from "./text/en.json"
 
-const Settings = (): JSX.Element => {
+export default function Settings(): JSX.Element {
 
     return(
         <main className="grid place-items-center h-[92vh] w-full">
@@ -13,5 +13,3 @@ const Settings = (): JSX.Element => {
         </main>
     )
 }
-
-export default Settings

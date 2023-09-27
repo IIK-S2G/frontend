@@ -1,6 +1,6 @@
 import Notifications from "./components/notifications"
 
-const NotificationPage = (): JSX.Element => {
+export default function NotificationPage(): JSX.Element {
 
     return(
         <main className="grid place-items-center h-[92vh] mx-8">
@@ -10,5 +10,3 @@ const NotificationPage = (): JSX.Element => {
         </main>
     )
 }
-
-export default NotificationPage

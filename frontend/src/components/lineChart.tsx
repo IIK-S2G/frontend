@@ -24,7 +24,7 @@ ChartJS.register(
     Legend
 );
 
-const LineChart = (props: LineChartProps | MultiLineChartProps) => {
+export default function LineChart(props: LineChartProps | MultiLineChartProps) {
     const options = {
         responsive: true,
         plugins: {
@@ -79,5 +79,3 @@ const LineChart = (props: LineChartProps | MultiLineChartProps) => {
         </div>
     )
 }
-
-export default LineChart
